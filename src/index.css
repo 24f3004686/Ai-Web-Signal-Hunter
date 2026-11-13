@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.dark body {
+    background-color: #020617;
+    color: #f1f5f9;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.005em;
+  }
+
+  :focus-visible {
+    outline: 2px solid #0f766e;
+    outline-offset: 2px;
+  }
+
+  html.dark :focus-visible {
+    outline-color: #2dd4bf;
+  }
+}
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  html.dark body,
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}

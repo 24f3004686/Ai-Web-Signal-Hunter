@@ -1,0 +1,6 @@
+{
+  "name": "AI Web Signal Hunter",
+  "description": "Discover, crawl, and analyze public web discussions to extract ranked market signals and opportunity briefs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
